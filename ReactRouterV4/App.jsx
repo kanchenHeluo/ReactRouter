@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+//if need hash link, import HashRouter as Router
+//if need active control, import NavLink as Link
 import Home from './Home'
 import Gists from './Gists'
 
@@ -74,7 +76,7 @@ class App extends Component{
 			      <Route exact path="/" component={Gists}></Route>
 			      <Route path="/about" component={About}/>
 			      
-			      <Route path="/idx" component={() => (<Index idx={this.state.idx} onUnmount={this.callunmount}/>)}/>
+			      <Route path="/idx" render={() => (<Index idx={this.state.idx} onUnmount={this.callunmount}/>)}/>
 			    </div>
 			  </Router>)
 	}
